@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Lesson</title>
+    </head>
+    <body>
+        <div class="container">
+            <!-- <header>
+                <button class="header-btn">Add Card</button>
+            </header> -->
+            <div id="cards-block"></div>
+        </div>
+        <template id="card-template">
+            <div class="card">
+                <div class="card-main-block">
+                    <img src="" class="card-image" />
+                    <div class="card-row">
+                        <h3 class="card-title"></h3>
+                    </div>
+                    <div class="card-row">
+                        <p class="card-price"></p>
+                        <div class="card-sub-row">
+                            <p class="card-rating" id="rating-1"></p>
+                            <p class="card-rating" id="rating-2">
+                                <img src="../../Images/star.png" width="12px" class="rating-img" />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-buttons-block">
+                    <div class="card-row">
+                        <button class="delete-btn" onclick="deleteCard(event)">X</button>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template id="add-card-template">
+            <div class="new-card card">
+                <h2 class="new-card-title">Add new card</h2>
+                <input type="text" placeholder="Image url" id="image-input" class="new-card-input" />
+                <input type="text" placeholder="Title" id="title-input" class="new-card-input" />
+                <input type="text" placeholder="Price" id="price-input" class="new-card-input" />
+                <input type="text" placeholder="Rate" id="rate-input" class="new-card-input" />
+                <input type="text" placeholder="Rate count" id="count-input" class="new-card-input" />
+                <button id="add-card-btn" onclick="addNewCard(event)">Add card</button>
+            </div>
+        </template>
+
+        <script src="./script.js"></script>
+    </body>
+</html>

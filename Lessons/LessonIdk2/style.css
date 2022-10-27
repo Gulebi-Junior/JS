@@ -1,0 +1,26 @@
+/* button {
+    width: 150px;
+}
+
+#input {
+    width: 150px;
+    box-sizing: border-box;
+}
+
+#eval,
+#clear {
+    width: 50px;
+    box-sizing: border-box;
+}
+
+#operations-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+#numbers-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+} */

@@ -1,0 +1,40 @@
+body {
+    margin: 0px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.block {
+    width: 550px;
+    margin: 20px;
+    box-sizing: border-box;
+    border: 2px solid gray;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 35px;
+}
+
+.color-block {
+    width: 180px;
+    justify-content: center;
+    padding: 25px 30px;
+}

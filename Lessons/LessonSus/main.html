@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="container">
+            <div id="header">
+                <div id="sub-header">
+                    <button id="header-color-btn" class="header-btn">
+                        <img src="./images/palette.png" id="palette-img" class="header-btn-img" />
+                    </button>
+                    <button id="header-calc-btn" class="header-btn">
+                        <img src="./images/calc.png" id="calc-img" class="header-btn-img" />
+                    </button>
+                </div>
+            </div>
+            <div id="color-palette">
+                <div id="background-color-column" class="color-palette-subblock">
+                    <h2 class="color-palette-label">Choose bg color</h2>
+                </div>
+                <div id="text-color-column" class="color-palette-subblock">
+                    <h2 class="color-palette-label">Choose text color</h2>
+                </div>
+            </div>
+            <div id="calculator">
+                <div class="calc-top-row">
+                    <button class="calc-btn" onclick="calc('clear')">C</button>
+                    <h2 id="calc-input">0</h2>
+                </div>
+                <div class="calc-row">
+                    <div id="calc-btns-block">
+                        <div id="calc-btns-block-row">
+                            <button class="calc-btn" onclick="calc(7)">7</button>
+                            <button class="calc-btn" onclick="calc(8)">8</button>
+                            <button class="calc-btn" onclick="calc(9)">9</button>
+                            <button class="calc-btn" onclick="calc('/')">/</button>
+                        </div>
+                        <div id="calc-btns-block-row">
+                            <button class="calc-btn" onclick="calc(4)">4</button>
+                            <button class="calc-btn" onclick="calc(5)">5</button>
+                            <button class="calc-btn" onclick="calc(6)">6</button>
+                            <button class="calc-btn" onclick="calc('*')">*</button>
+                        </div>
+                        <div id="calc-btns-block-row">
+                            <button class="calc-btn" onclick="calc(1)">1</button>
+                            <button class="calc-btn" onclick="calc(2)">2</button>
+                            <button class="calc-btn" onclick="calc(3)">3</button>
+                            <button class="calc-btn" onclick="calc('-')">-</button>
+                        </div>
+                        <div id="calc-btns-block-row">
+                            <button class="calc-btn" onclick="calc(0)">0</button>
+                            <button class="calc-btn" onclick="calc('.')">.</button>
+                            <button class="calc-btn" onclick="calc('=')">=</button>
+                            <button class="calc-btn" onclick="calc('+')">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="main-block">
+                <div class="row">
+                    <div class="sub-row2">
+                        <h2 class="title">Main page</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <h4 class="info" id="name-text">.</h4>
+                    <div class="sub-row">
+                        <input type="text" class="input new-input" id="new-name" placeholder="New name" />
+                        <button class="change-btn btn" id="change-name-btn">Change</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <h4 class="info" id="surname-text">.</h4>
+                    <div class="sub-row">
+                        <input type="text" class="input new-input" id="new-surname" placeholder="New surname" />
+                        <button class="change-btn btn" id="change-surname-btn">Change</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <h4 class="info" id="age-text">.</h4>
+                    <div class="sub-row">
+                        <input type="text" class="input new-input" id="new-age" placeholder="New age" />
+                        <button class="change-btn btn" id="change-age-btn">Change</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="sub-row2">
+                        <button class="btn" id="logout-btn">Logout</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="sub-row2">
+                        <button class="btn" id="delete-btn">Delete my account</button>
+                    </div>
+                </div>
+            </div>
+            <div id="search-block">
+                <div class="row">
+                    <div class="sub-row2">
+                        <h2 class="title"></h2>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <div class="row">
+                    <div class="sub-row">
+                        <input type="text" id="search-input" class="input" placeholder="Query" />
+                        <button id="clear-btn" class="btn small-btn">X</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <template id="table-row-template">
+            <tr>
+                <td id="name-data"></td>
+                <td id="surname-data"></td>
+                <td id="age-data"></td>
+            </tr>
+        </template>
+        <template id="color-block-template">
+            <div class="color-block">
+                <h3 class="color-title"></h3>
+            </div>
+        </template>
+
+        <script src="./main.js"></script>
+    </body>
+</html>
