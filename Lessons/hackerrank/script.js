@@ -79,14 +79,40 @@
 
 // drawing-book unfinished
 
-function designerPdfViewer(array, word) {
-    let tallness = [];
+// function designerPdfViewer(array, word) {
+//     let tallness = [];
 
-    word.split("").forEach((el, i) => {
-        tallness.push(array[word.charCodeAt(i) - 97]);
+//     word.split("").forEach((el, i) => {
+//         tallness.push(array[word.charCodeAt(i) - 97]);
+//     });
+
+//     return Math.max(...tallness) * word.length;
+// }
+
+// console.log(designerPdfViewer([1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7], "zaba"));
+
+// the-love-letter-mystery
+
+function theLoveLetterMystery(str) {
+    let strArr = str.split("");
+    let falseNumberIndexes = [];
+
+    for (let i = 0; i < strArr.length / 2; i++) {
+        if (strArr[i] != strArr[strArr.length - 1 - i]) {
+            falseNumberIndexes.push(strArr.length - 1 - i);
+            // strArr[strArr.length - 1 - i] = str[str.charCodeAt(strArr.length - 1 - i) - 97 - 1];
+        }
+    }
+
+    falseNumberIndexes.forEach((el, index) => {
+        let loopLength = str.charCodeAt(strArr.length - 1) - 97 - (str.charCodeAt(0) - 97);
+
+        for (let i = 1; i <= loopLength; i++) {
+            strArr[strArr.length - 1] = str[str.charCodeAt(strArr.length - 1) - 97 - i];
+        }
     });
 
-    return Math.max(...tallness) * word.length;
+    return strArr;
 }
 
-console.log(designerPdfViewer([1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7], "zaba"));
+console.log(theLoveLetterMystery("abcd"));
