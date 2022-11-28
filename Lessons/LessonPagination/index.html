@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Pagination</title>
+    </head>
+    <body>
+        <div class="container">
+            <div id="info-block" class="block"></div>
+            <div id="main-block" class="block">
+                <button id="scroll-btn" class="btn" onclick="scrollPage()"></button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th onclick="sort('id')">ID</th>
+                            <th onclick="sort('title')">Title</th>
+                            <th onclick="sort('price')">Price</th>
+                            <th onclick="sort('description')">Description</th>
+                            <th onclick="sort('category')">Category</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div id="main-bottom-block">
+                    <div id="main-bottom-pages-block"></div>
+                    <div id="main-bottom-number-block">
+                        <input
+                            type="text"
+                            id="input"
+                            placeholder="Number of products"
+                            oninput="setNumberOfProducts(event)"
+                        />
+                    </div>
+                    <div id="main-bottom-btn-block">
+                        <button id="left-btn" class="btn" onclick="changePage(-1)"></button>
+                        <button id="right-btn" class="btn" onclick="changePage(1)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+
+    <template id="table-row-template">
+        <tr>
+            <td class="id-data"></td>
+            <td class="title-data" onclick="getMoreInfo(event)"></td>
+            <td class="price-data"></td>
+            <td class="description-data"></td>
+            <td class="category-data" onclick="sortByCategory(event)"></td>
+        </tr>
+    </template>
+    <template id="card-template">
+        <div class="card">
+            <div class="card-main-block">
+                <img src="" class="card-image" />
+                <div class="card-row">
+                    <h3 class="card-title"></h3>
+                </div>
+                <div class="card-row">
+                    <p class="card-price"></p>
+                    <div class="card-sub-row">
+                        <p class="card-rating" id="rating-1"></p>
+                        <p class="card-rating" id="rating-2">
+                            <img src="../../Images/star.png" width="12px" class="rating-img" />
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-buttons-block">
+                <div class="card-row">
+                    <button class="delete-btn" onclick="deleteCard(event)">X</button>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="page-btn-template">
+        <button class="page-btn" onclick="changePageAtOnce(event)"></button>
+    </template>
+</html>
