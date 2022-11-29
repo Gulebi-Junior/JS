@@ -13,6 +13,10 @@ const validateEmail = (email) => {
         );
 };
 
+const validatePassword = (password) => {
+    return String(password).match(/^(?!.*[\s])(?=.*\d)(?=.*[*/$!])(?=.*[a-z])(?=.*[A-Z]).{8,}$/);
+};
+
 const validateAge = (age) => {
     return String(age).match(/^[1-9][0-9]?$|^100$/);
 };
@@ -32,6 +36,10 @@ signUpBtn.addEventListener("click", (event) => {
 
     if (!validateEmail(emailInput.value)) {
         console.log("Incorrect email!");
+        return;
+    }
+    if (!validatePassword(passwordInput.value)) {
+        console.log("Incorrect password!");
         return;
     }
     if (!validateAge(ageInput.value)) {
